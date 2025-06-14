@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" 
+xmlns:th="http://www.thymeleaf.org"
+th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+  <head>
+    <title>About Page</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333;">
+    <div id="content">
+      <h1 style="text-align: center;">About Connectify</h1>
+      <section style="padding: 20px 0;">
+        <div style="width: 80%; margin: auto; overflow: hidden;">
+          <h2 style="font-size: 30px; margin-bottom: 10px;">Our Mission</h2>
+          <p>At Connectify, our mission is to bring people closer together by providing an innovative platform that fosters meaningful connections. We believe in the power of community, and our goal is to create a space where everyone can share, engage, and grow.</p>
+        </div>
+      </section>
+
+      
+
+      
+
+      <section style="padding: 20px 0;">
+        <div style="width: 80%; margin: auto; overflow: hidden;">
+          <h2 style="font-size: 30px; margin-bottom: 10px;">Our Team</h2>
+          <p>Our team is composed of passionate, dedicated professionals from diverse backgrounds. We work together to bring our vision to life and ensure that Connectify remains a trusted and beloved platform for all our users.</p>
+        </div>
+      </section>
+    </div>
+    <script>
+      console.log("About Page");
+    </script>
+    <script>
+      console.log("Second About Page Script");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+ th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+  <head>
+    <title>Contact Us Page</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333;">
+    <div id="content" style="text-align: center; padding: 20px;">
+      
+      <section style="padding: 20px 0;">
+        <div style="width: 80%; margin: auto; overflow: hidden;">
+          <h2 style="font-size: 30px; margin-bottom: 10px;">Contact Information</h2>
+          <p>Email: <a href="mailto:support@connectify.com" style="color: #7a1212; text-decoration: none;">support@connectify.com</a></p>
+          <p>Phone: +91 8766033321</p>
+        </div>
+      </section>
+      <section style="padding: 20px 0;">
+        <div style="width: 80%; margin: auto; overflow: hidden;">
+          <h2 style="font-size: 30px; margin-bottom: 10px;">Follow Us</h2>
+          <a href="https://www.facebook.com/connectify" style="color: #333; margin: 0 10px; text-decoration: none;">Facebook</a>
+          <a href="https://www.twitter.com/connectify" style="color: #333; margin: 0 10px; text-decoration: none;">Twitter</a>
+          <a href="https://www.instagram.com/connectify" style="color: #333; margin: 0 10px; text-decoration: none;">Instagram</a>
+          <a href="https://www.linkedin.com/connectify" style="color: #333; margin: 0 10px; text-decoration: none;">LinkedIn</a>
+        </div>
+      </section>
+    </div>
+    <script>
+      console.log("contact Page");
+    </script>
+    <script>
+      console.log("Second About Page Script");
+    </script>
+  </body>
+</html>

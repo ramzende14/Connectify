@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+  <head>
+    <title th:text="${loggedInUser.name} + ' Connectify '">Dashboard Page</title>
+  </head>
+  <body>
+
+    <div id="content">
+      <!-- Sidebar -->
+      <div th:if="${loggedInUser}">
+        <div data-th-replace="~{user/sidebar::sidebar}"></div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="sm:pl-64 pt-20 min-h-screen bg-gray-100">
+        <div class="flex flex-col items-center">
+          <h1 class="text-5xl font-bold text-blue-600 text-center mb-6 tracking-wide">
+            User Dashboard
+        </h1>
+        
+          <p class="text-gray-600 mb-6">"Power Up with Your Personalized Dashboard."</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+          <!-- Total Contacts Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800">Total Contacts</h2>
+            <p class="text-4xl text-blue-500 mt-4" th:text="${totalContacts}">0</p>
+          </div>
+
+          <!-- Recent Interactions Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800">Reminder</h2>
+            <ul class="mt-4 space-y-2">
+              <li th:each="interaction : ${recentInteractions}" class="text-gray-600">
+                <span th:text="${interaction}"></span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Actions Card -->
+          <div class="bg-white p-6 rounded-2xl shadow-lg">
+            <h2 class="text-2xl font-bold text-gray-800">Quick Actions</h2>
+            <div class="mt-4 space-y-4">
+              <a data-th-href="@{'/user/contact/add'}" class="block w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-lg text-center">Add New Contact</a>
+              <a data-th-href="@{'/user/contact'}" class="block w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg text-center">View All Contacts</a>
+              <a data-th-href="@{'/user/profile'}" class="block w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg text-center">Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      console.log("This is the Dashboard Page");
+    </script>
+  </body>
+</html>

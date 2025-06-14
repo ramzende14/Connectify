@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title>Contact Details</title>
+    
+</head>
+<body>
+    <div id="content">
+        <!-- Sidebar -->
+        <div th:if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+
+        <div class="sm:pl-64 pt-20 min-h-screen flex items-center justify-center  ">
+            <div class="flex flex-col items-center w-full max-w-4xl">
+                <h1 class="text-6xl font-extrabold text-blue-400 text-center mb-8">Contact Details</h1>
+
+                <div class="w-full bg-white shadow-md rounded-lg p-8 flex flex-col items-center">
+                    <div class="mb-8">
+                        <img th:src="${contact.picture}" alt="Contact Picture" class="rounded-full w-32 h-32 mx-auto" />
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">ID:</span> <span th:text="${contact.id}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Name:</span> <span th:text="${contact.name}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Email:</span> <span th:text="${contact.email}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Phone Number:</span> <span th:text="${contact.phoneNumber}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Address:</span> <span th:text="${contact.address}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Description:</span> <span th:text="${contact.description}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Favorite:</span> <span th:text="${contact.favorite}"></span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="font-bold">Website Link:</span> <a th:href="${contact.websiteLink}" th:text="${contact.websiteLink}" class="text-blue-500 underline"></a>
+                    </div>
+                    <div>
+                        <span class="font-bold">LinkedIn Link:</span> <a th:href="${contact.linkdinLink}" th:text="${contact.linkdinLink}" class="text-blue-500 underline"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("this is search Page");
+    </script>
+</body>
+</html>

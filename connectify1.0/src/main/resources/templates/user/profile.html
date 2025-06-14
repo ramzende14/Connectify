@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+<head>
+    <title th:text="${loggedInUser.name} + ' Connectify '">Profile Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div id="content">
+        <!-- Side bar -->
+        <div th:if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar::sidebar}"></div>
+        </div>
+        
+        <div class="sm:pl-64 pt-40" style="height: 1000px;">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="text-6xl font-extrabold text-blue-400 text-center mb-4">Profile </h1>
+                <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">"Your Profile, Your Story."</p>
+
+                <!-- User Profile Information -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg mt-8 w-full max-w-2xl">
+                    <div class="text-center mb-8">
+                        <div class="w-32 h-32 rounded-full mx-auto mb-4 overflow-hidden border-4 border-blue-500">
+                            <img th:if="${user.profilePic != null}" th:src="@{${user.profilePic}}" alt="Profile Picture" class="w-full h-full object-cover">
+                            <svg th:if="${user.profilePic == null}" xmlns="http://www.w3.org/2000/svg" class="h-full w-full text-gray-300 dark:text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A4.978 4.978 0 016 17.803a4.978 4.978 0 01.879.001A4.978 4.978 0 018 17.803a4.978 4.978 0 01.879.001A4.978 4.978 0 0110 17.803a4.978 4.978 0 01.879.001A4.978 4.978 0 0112 17.803a4.978 4.978 0 01.879.001A4.978 4.978 0 0114 17.803a4.978 4.978 0 01.879.001A4.978 4.978 0 0116 17.803a4.978 4.978 0 01.879.001A4.978 4.978 0 0118 17.803a4.978 4.978 0 01.879.001 4.978 4.978 0 011.657-1.657M14 10a4 4 0 11-8 0 4 4 0 018 0zM4 18a8 8 0 1116 0H4z"/>
+                            </svg>
+                        </div>
+                        <h1 class="text-3xl font-bold text-gray-900 dark:text-white" th:text="${user.name}">User Name</h1>
+                        <p class="text-gray-700 dark:text-gray-400" th:text="${user.email}">User Email</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">About</h2>
+                            <p class="text-gray-700 dark:text-gray-400" th:text="${user.about}">User About</p>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Contact Info</h2>
+                            <p class="text-gray-700 dark:text-gray-400" th:text="${user.phoneNumber}">User Phone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        console.log("this is profile page Page");
+    </script>
+</body>
+</html>

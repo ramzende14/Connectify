@@ -131,6 +131,11 @@ public class ContactServiceImpl implements ContactService{
         return contactRepository.countByUserId(userId);
     }
 
+    @Override
+    public List<Contact> getAllContacts() {
+       return contactRepository.findAll();
+    }
+
   
    
 

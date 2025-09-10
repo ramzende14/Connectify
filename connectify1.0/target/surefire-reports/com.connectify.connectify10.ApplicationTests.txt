@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+Test set: com.connectify.connectify10.ApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 22.16 s <<< FAILURE! -- in com.connectify.connectify10.ApplicationTests
+com.connectify.connectify10.ApplicationTests.sendEmailTest -- Time elapsed: 7.030 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+Unexpected exception thrown: org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 5.7.1 Sending from domain connectify.com is not allowed
+;
+  nested exception is:
+	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 5.7.1 Sending from domain connectify.com is not allowed
+
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3199)
+	at com.connectify.connectify10.ApplicationTests.sendEmailTest(ApplicationTests.java:19)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: org.springframework.mail.MailSendException: Failed messages: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 5.7.1 Sending from domain connectify.com is not allowed
+;
+  nested exception is:
+	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 5.7.1 Sending from domain connectify.com is not allowed
+; message exceptions (1) are:
+Failed message 1: org.eclipse.angus.mail.smtp.SMTPSendFailedException: 550 5.7.1 Sending from domain connectify.com is not allowed
+;
+  nested exception is:
+	org.eclipse.angus.mail.smtp.SMTPSenderFailedException: 550 5.7.1 Sending from domain connectify.com is not allowed
+
+	at org.springframework.mail.javamail.JavaMailSenderImpl.doSend(JavaMailSenderImpl.java:453)
+	at org.springframework.mail.javamail.JavaMailSenderImpl.send(JavaMailSenderImpl.java:317)
+	at org.springframework.mail.MailSender.send(MailSender.java:42)
+	at com.connectify.connectify10.Service.ServiceImpl.EmailServiceImpl.sendEmail(EmailServiceImpl.java:27)
+	at com.connectify.connectify10.ApplicationTests.lambda$sendEmailTest$0(ApplicationTests.java:20)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 6 more
+
